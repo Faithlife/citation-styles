@@ -108,7 +108,7 @@
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="false" et-al-min="3" et-al-use-first="3" second-field-align="flush">
+  <bibliography hanging-indent="false" et-al-min="4" et-al-use-first="3" second-field-align="flush">
     <layout>
       <text variable="citation-number" suffix=". "/>
       <text macro="author"/>
@@ -202,15 +202,12 @@
         <else>
           <text macro="editor" prefix=" " suffix="."/>
           <group prefix=" " suffix=".">
-            <text variable="container-title" font-style="italic" form="short" strip-periods="true" suffix="."/>
-            <group delimiter=";" prefix=" ">
+            <text variable="container-title" font-style="italic" form="short" suffix=" "/>
+            <group delimiter=";">
               <date variable="issued">
                 <date-part name="year"/>
               </date>
-              <group>
-                <text variable="volume"/>
-                <text variable="issue" prefix="(" suffix=")"/>
-              </group>
+              <text variable="volume" font-weight="bold"/>
             </group>
             <text variable="page" prefix=":"/>
           </group>

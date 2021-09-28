@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="note" default-locale="de-DE">
   <info>
-    <title>Juristische Schulung (German)</title>
+    <title>Juristische Schulung (Deutsch)</title>
     <title-short>JuS</title-short>
     <id>http://www.zotero.org/styles/juristische-schulung</id>
     <link href="http://www.zotero.org/styles/juristische-schulung" rel="self"/>
-    <link href="https://www.zotero.org/styles/neue-juristische-wochenschrift" rel="template"/>
+    <link href="http://www.zotero.org/styles/neue-juristische-wochenschrift" rel="template"/>
     <link href="http://rsw.beck.de/rsw/upload/JuS/jusautorenhinweise.pdf" rel="documentation"/>
     <author>
       <name>Reto Mantz</name>
@@ -144,7 +144,16 @@
               <text macro="edition"/>
             </else>
           </choose>
-          <text variable="locator" prefix=", "/>
+          <choose>
+              <!-- "S." as a locator is ommited. Many books however are instead cited by § plus margin number. The § has to appear. -->
+              <if locator="page">
+                  <text variable="locator" prefix=", "/>
+              </if>
+              <else>
+                  <label variable="locator" form="symbol" prefix=", "/>
+                  <text variable="locator" prefix=" "/>
+              </else>
+          </choose>
         </else-if>
         <!-- Legal commentary or handbook should be of publication type "entry-encyclopedia"
         - The term "Bearbeiter" (author of a certain chapter) in the following examples should be added by you and is not governed by this stylesheet

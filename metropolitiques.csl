@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" default-locale="fr-FR" version="1.0" page-range-format="expanded">
   <info>
-    <title>Métropolitiques (French)</title>
+    <title>Métropolitiques (Français)</title>
     <id>http://www.zotero.org/styles/metropolitiques</id>
     <link href="http://www.zotero.org/styles/metropolitiques" rel="self"/>
     <link href="http://www.zotero.org/styles/geneses" rel="template"/>
@@ -23,18 +23,9 @@
       <term name="ordinal-03">e</term>
       <term name="ordinal-04">e</term>
       <term name="cited">op.&#160;cit.</term>
-      <term name="page" form="short">
-        <single>p.</single>
-        <multiple>p.</multiple>
-      </term>
-      <term name="issue" form="short">
-        <single>n°</single>
-        <multiple>n°</multiple>
-      </term>
-      <term name="editor" form="short">
-        <single>dir.</single>
-        <multiple>dir.</multiple>
-      </term>
+      <term name="page" form="short">p.</term>
+      <term name="issue" form="short">n°</term>
+      <term name="editor" form="short">dir.</term>
     </terms>
   </locale>
   <macro name="author">

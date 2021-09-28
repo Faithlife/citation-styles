@@ -33,7 +33,7 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" and="symbol" et-al-min="3" initialize-with=". "/>
+      <name form="short" and="symbol" initialize-with=". "/>
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -110,10 +110,12 @@
         <else-if type="chapter paper-conference" match="any">
           <text macro="title" prefix=" "/>
           <group prefix=".">
-            <group prefix=" In:" suffix="">
-              <names variable="editor translator" delimiter=", " prefix=" ">
-                <name delimiter-precedes-last="never" initialize-with="" name-as-sort-order="all" sort-separator=" "/>
-                <label form="short" text-case="lowercase" prefix=" "/>
+            <group prefix=" In:">
+              <text variable="container-title" font-style="italic" prefix=" "/>
+              <text variable="collection-title" prefix=" " suffix="."/>
+              <names variable="editor translator" prefix=" (" delimiter=", " suffix=")">
+                <label form="short" suffix=" " strip-periods="true"/>
+                <name name-as-sort-order="all" sort-separator=" " initialize-with="" delimiter=", " delimiter-precedes-last="never"/>
               </names>
               <text variable="container-title" font-style="italic" prefix=" " suffix="."/>
               <text variable="collection-title" prefix=" " suffix="."/>

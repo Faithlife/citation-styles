@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="note" demote-non-dropping-particle="never" default-locale="fr-FR" page-range-format="expanded">
   <info>
-    <title>Collections électroniques de l'INHA (author-date, French)</title>
+    <title>Collections électroniques de l'INHA (author-date, Français)</title>
     <id>http://www.zotero.org/styles/collections-electroniques-de-l-inha-author-date</id>
     <link href="http://www.zotero.org/styles/collections-electroniques-de-l-inha-author-date" rel="self"/>
     <link href="http://www.zotero.org/styles/revue-archeologique" rel="template"/>
@@ -20,10 +20,7 @@
   </info>
   <locale xml:lang="fr">
     <terms>
-      <term name="editor" form="short">
-        <single>éd.</single>
-        <multiple>éd.</multiple>
-      </term>
+      <term name="editor" form="short">éd.</term>
       <term name="in">dans</term>
       <term name="anonymous">anonyme</term>
       <term name="anonymous" form="short">anon.</term>
@@ -73,7 +70,7 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" font-variant="small-caps" delimiter=", " et-al-min="4" et-al-use-first="1"/>
+      <name form="short" font-variant="small-caps" delimiter=", "/>
       <et-al font-variant="normal" font-style="italic"/>
       <substitute>
         <names variable="editor"/>

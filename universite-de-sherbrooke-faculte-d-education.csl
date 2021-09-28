@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="fr-CA">
   <info>
-    <title>Université de Sherbrooke - Faculté d'éducation (French - Canada)</title>
+    <title>Université de Sherbrooke - Faculté d'éducation (Français - Canada)</title>
     <id>http://www.zotero.org/styles/universite-de-sherbrooke-faculte-d-education</id>
     <link href="http://www.zotero.org/styles/universite-de-sherbrooke-faculte-d-education" rel="self"/>
     <link href="http://www.zotero.org/styles/apa" rel="template"/>
@@ -21,10 +21,7 @@
       <term name="editor" form="short">dir.</term>
       <term name="in">In</term>
       <term name="no date" form="short">s.d.</term>
-      <term name="translator" form="short">
-        <single>trad.</single>
-        <multiple>trad.</multiple>
-      </term>
+      <term name="translator" form="short">trad.</term>
     </terms>
   </locale>
   <macro name="container-contributors">

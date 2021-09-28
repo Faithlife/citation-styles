@@ -6,7 +6,8 @@
     <id>http://www.zotero.org/styles/acta-neuropathologica</id>
     <link href="http://www.zotero.org/styles/acta-neuropathologica" rel="self"/>
     <link href="http://www.zotero.org/styles/springer-basic-brackets-no-et-al-alphabetical" rel="independent-parent"/>
-    <link href="http://www.springer.com/cda/content/document/http://www.springer.com/medicine/pathology/journal/401" rel="documentation"/>
+    <link href="http://www.springer.com/cda/content/document/cda_downloaddocument/Key_Style_Points_1.0.pdf" rel="documentation"/>
+    <link href="http://www.springer.com/cda/content/document/cda_downloaddocument/manuscript-guidelines-1.0.pdf" rel="documentation"/>
     <category citation-format="numeric"/>
     <category field="science"/>
     <issn>0001-6322</issn>

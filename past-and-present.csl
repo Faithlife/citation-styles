@@ -22,10 +22,7 @@
         <single>fo.</single>
         <multiple>fos.</multiple>
       </term>
-      <term name="translator" form="short">
-        <single>trans.</single>
-        <multiple>trans.</multiple>
-      </term>
+      <term name="translator" form="short">trans.</term>
     </terms>
   </locale>
   <macro name="author">
@@ -182,7 +179,7 @@
                       <text macro="container"/>
                       <text macro="date"/>
                     </group>
-		    <text macro="archive"/>
+                    <text macro="archive"/>
                     <text macro="volref"/>
                     <text macro="pageref"/>
                   </group>

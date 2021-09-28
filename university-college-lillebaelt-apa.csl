@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" and="symbol" initialize-with=". " delimiter-precedes-last="never" default-locale="da-DK">
   <info>
-    <title>University College Lillebælt - APA (Danish)</title>
+    <title>University College Lillebælt - APA (Dansk)</title>
     <id>http://www.zotero.org/styles/university-college-lillebaelt-apa</id>
     <link href="http://www.zotero.org/styles/university-college-lillebaelt-apa" rel="self"/>
     <link href="http://www.zotero.org/styles/apa" rel="template"/>
@@ -19,6 +19,7 @@
       <term name="accessed">lokaliseret</term>
       <term name="no date" form="short">u.å.</term>
       <term name="in">i:</term>
+      <term name="et-al">et al.</term>
     </terms>
   </locale>
   <locale xml:lang="en">
@@ -27,10 +28,7 @@
         <single>ed. and trans.</single>
         <multiple>eds. and trans.</multiple>
       </term>
-      <term name="translator" form="short">
-        <single>trans.</single>
-        <multiple>trans.</multiple>
-      </term>
+      <term name="translator" form="short">trans.</term>
     </terms>
   </locale>
   <macro name="container-contributors">
@@ -100,20 +98,20 @@
       </if>
       <else-if type="legislation">
         <choose>
-        <if variable="author">
-          <names variable="author"/>
-          <text variable="volume" prefix=", "/>
-        </if>
-        <else-if type="legislation" position="first">
-          <text variable="title"/>
-          <group prefix=", " delimiter=": ">
-            <text value="herefter kaldet"/>
-            <text variable="title-short"/>
-          </group>
-        </else-if>
-        <else-if type="legislation" position="subsequent">
-          <text variable="title" form="short" font-style="italic"/>
-        </else-if>
+          <if variable="author">
+            <names variable="author"/>
+            <text variable="volume" prefix=", "/>
+          </if>
+          <else-if type="legislation" position="first">
+            <text variable="title"/>
+            <group prefix=", " delimiter=": ">
+              <text value="herefter kaldet"/>
+              <text variable="title-short"/>
+            </group>
+          </else-if>
+          <else-if type="legislation" position="subsequent">
+            <text variable="title" form="short" font-style="italic"/>
+          </else-if>
         </choose>
       </else-if>
       <else>
@@ -180,16 +178,6 @@
       <if type="post-weblog chapter entry-dictionary entry-encyclopedia paper-conference article-journal article-magazine article-newspaper" match="any">
         <text variable="title"/>
       </if>
-      <else-if type="legislation">
-        <choose>
-          <if variable="author">
-            <text variable="title" font-style="italic"/>
-          </if>
-          <else>
-            <text variable="title"/>
-          </else>
-        </choose>
-      </else-if>
       <else>
         <choose>
           <if variable="version">
@@ -355,7 +343,7 @@
   <macro name="issued-year">
     <!---                                                                                                                                                                              MACRO: issued-year -->
     <choose>
-      <if type="bill legal_case legislation">
+      <if type="bill legal_case legislation" match="any">
       </if>
       <else-if variable="issued">
         <group>
@@ -488,7 +476,14 @@
     <!---                                                                                                                                                                              MACRO: legal-cites -->
     <choose>
       <if type="legal_case legislation" match="any">
-        <text variable="volume" prefix=", "/>
+        <choose>
+          <if variable="number">
+            <text variable="number" prefix=", "/>
+          </if>
+          <else>
+            <text variable="volume" prefix=", "/>
+          </else>
+        </choose>
         <date variable="issued" prefix=" af " delimiter="/">
           <date-part name="day"/>
           <date-part name="month" form="numeric-leading-zeros"/>
