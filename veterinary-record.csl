@@ -4,7 +4,6 @@
     <title>Veterinary Record</title>
     <id>http://www.zotero.org/styles/veterinary-record</id>
     <link href="http://www.zotero.org/styles/veterinary-record" rel="self"/>
-    <link href="http://www.zotero.org/styles/fish-and-fisheries" rel="template"/>
     <link href="http://veterinaryrecord.bmj.com/" rel="documentation"/>
     <author>
       <name>Sebastian Karcher</name>
@@ -135,11 +134,19 @@
           </group>
         </if>
         <else-if type="chapter paper-conference" match="any">
-          <group delimiter=". " prefix=" ">
-            <text macro="title"/>
-            <group delimiter=" ">
-              <text term="in" suffix=" " text-case="capitalize-first"/>
-              <text variable="container-title"/>
+          <text macro="title" prefix=" " suffix="." font-style="normal"/>
+          <group prefix=" " suffix=" ">
+            <text term="in" suffix=" "/>
+            <group delimiter=", " suffix=".">
+              <text variable="container-title" font-style="italic"/>
+              <text variable="volume" prefix="Vol. "/>
+            </group>
+          </group>
+          <group delimiter=" " prefix=" " suffix=". ">
+            <text variable="collection-title" font-style="italic"/>
+            <group delimiter=", ">
+              <text macro="editor" prefix="(" suffix=")"/>
+              <text macro="edition"/>
             </group>
             <text macro="editor"/>
             <text macro="edition"/>

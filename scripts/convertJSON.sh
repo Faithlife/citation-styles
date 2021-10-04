@@ -1,37 +1,30 @@
 #!/bin/sh
 
-# Set this to your Code folder
-CODE_DIR="$HOME/Code50"
+OUTPUT_DIR="$1"
+SCRIPT_DIR=`dirname $0`
 
-
-SCRIPT_DIR=`dirname "$0"`
-MAKE_JSON="$SCRIPT_DIR/../scripts/makejson.py"
-DEFAULT_OUTPUT_DIR="$CODE_DIR/DigitalLibrary/src/Libronix.DigitalLibrary/CitationStyles/"
-OUTPUT_DIR=${1:-$DEFAULT_OUTPUT_DIR}
-
-if [[ -z $OUTPUT_DIR || ! -d $OUTPUT_DIR ]]
+if [[ -z "$OUTPUT_DIR" || ! -d "$OUTPUT_DIR" ]]
 then
-	echo "Please specify a folder to copy the .json output files to."
-	echo "e.g. $OUTPUT_DIR"
-	exit 1;
+	echo "Please specify a directory to output the .json files to."
+	echo "e.g. ~/code/DigitalLibrary/src/Libronix.DigitalLibrary/CitationStyles"
+	exit 1
 fi
 
-pushd "$SCRIPT_DIR/.."
 
-for STYLE in apa bibtex chicago-fullnote-bibliography din-1505-2 harvard1 modern-language-association refer-bibix ris society-of-biblical-literature-fullnote-bibliography society-of-biblical-literature-fullnote-bibliography-1st-ed turabian-fullnote-bibliography american-anthropological-association modern-humanities-research-association american-political-science-association american-sociological-association unified-style-linguistics pontifical-biblical-institute pontifical-athenaeum-regina-apostolorum christian-writers-manual-of-style
+for style in american-anthropological-association american-political-science-association american-sociological-association apa apa-6th-edition bibtex chicago-fullnote-bibliography christian-writers-manual-of-style din-1505-2 harvard-cite-them-right modern-humanities-research-association modern-language-association modern-language-association-7th-edition pontifical-athenaeum-regina-apostolorum pontifical-biblical-institute refer-bibix ris society-of-biblical-literature-fullnote-bibliography society-of-biblical-literature-fullnote-bibliography-1st-ed turabian-author-date turabian-fullnote-bibliography unified-style-sheet-for-linguistics
 do
-    echo "Converting $STYLE from CSL to JSON"
-    python "$MAKE_JSON" $STYLE.csl > $STYLE.json
-    SIZE_CSL=`ls -l $STYLE.csl | awk '{ print $5 }'`
-    SIZE_JSON=`ls -l $STYLE.json | awk '{ print $5 }'`
-    echo "File size changed from $SIZE_CSL to $SIZE_JSON"
-    if [[ "$OUTPUT_DIR" !=  "" ]]; then
-    	echo "Copying $STYLE.json to $OUTPUT_DIR"
-    	cp $STYLE.json "$OUTPUT_DIR"
-    fi
+	echo "Converting $style from CSL to JSON"
+
+	src_file="$SCRIPT_DIR/../$style.csl"
+
+	if [[ ! -f "$src_file" ]]; then
+		echo "Error: $src_file missing."
+		exit 1
+	fi
+
+	python "$SCRIPT_DIR/makejson.py" "$src_file" > "$OUTPUT_DIR/$style.json"
 done
 
-GIT_UPSTREAM_REVISION=`git rev-parse upstream/master`
-GIT_THIRDPARTY_REVISION=`git rev-parse master`
-echo "CSL JSON files generated from upstream/master revision $GIT_UPSTREAM_REVISION, master revision $GIT_THIRDPARTY_REVISION on `date`" | tee "$OUTPUT_DIR/csl_revision_info.txt"
-popd
+git_upstream_revision=`git rev-parse upstream/master`
+git_thirdparty_revisiON=`git rev-parse master`
+echo "CSL JSON files generated from upstream/master revision $git_upstream_revision, master revision $git_thirdparty_revision on `date`" | tee "$OUTPUT_DIR/csl_revision_info.txt"

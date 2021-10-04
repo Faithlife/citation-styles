@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="fr-CA">
   <info>
-    <title>Institut national de santé publique du Québec - TOPO (French - Canada)</title>
+    <title>Institut national de santé publique du Québec - TOPO (Français - Canada)</title>
     <title-short>INSPQ-TOPO</title-short>
     <id>http://www.zotero.org/styles/institut-national-de-sante-publique-du-quebec-topo</id>
     <link href="http://www.zotero.org/styles/institut-national-de-sante-publique-du-quebec-topo" rel="self"/>
@@ -17,10 +17,7 @@
   </info>
   <locale xml:lang="fr-CA">
     <terms>
-      <term name="editor" form="short">
-        <single>dir.</single>
-        <multiple>dir.</multiple>
-      </term>
+      <term name="editor" form="short">dir.</term>
     </terms>
   </locale>
   <macro name="author">
@@ -55,7 +52,7 @@
     <choose>
       <if variable="DOI accessed" match="all">
         <group prefix=", &lt;" suffix="&gt;">
-          <text variable="DOI" prefix="http://doi.org/"/>
+          <text variable="DOI" prefix="https://doi.org/"/>
         </group>
       </if>
       <else-if variable="URL accessed" match="all">

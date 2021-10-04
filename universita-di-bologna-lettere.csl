@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" default-locale="it-IT" demote-non-dropping-particle="sort-only">
   <info>
-    <title>University of Bologna - Liberal Arts College (Università di Bologna - Facoltà di Lettere e Filosofia) (Italian)</title>
+    <title>University of Bologna - Liberal Arts College (Università di Bologna - Facoltà di Lettere e Filosofia) (Italiano)</title>
     <id>http://www.zotero.org/styles/universita-di-bologna-lettere</id>
     <link href="http://www.zotero.org/styles/universita-di-bologna-lettere" rel="self"/>
     <link href="http://www.zotero.org/styles/chicago-fullnote-bibliography" rel="template"/>
@@ -570,12 +570,12 @@
     </group>
   </macro>
   <citation et-al-min="4" et-al-use-first="1">
-    <layout delimiter="; ">
+    <layout delimiter="; " suffix=". ">
       <choose>
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" form="long" text-case="capitalize-first" font-style="italic"/>
-            <text macro="point-locators-subsequent" suffix="."/>
+            <text macro="point-locators-subsequent"/>
           </group>
         </if>
         <else-if position="ibid">
@@ -585,7 +585,7 @@
           <group delimiter=", ">
             <text macro="contributors-short"/>
             <text macro="title-short"/>
-            <text macro="point-locators-subsequent" suffix="."/>
+            <text macro="point-locators-subsequent"/>
           </group>
         </else-if>
         <else>
@@ -602,7 +602,7 @@
           <text macro="issue"/>
           <text macro="locators-newspaper" prefix=", "/>
           <text macro="access-note" prefix=", "/>
-          <text macro="point-locators" suffix="."/>
+          <text macro="point-locators"/>
         </else>
       </choose>
     </layout>

@@ -5,7 +5,7 @@
     <id>http://www.zotero.org/styles/radiology</id>
     <link href="http://www.zotero.org/styles/radiology" rel="self"/>
     <link href="http://www.zotero.org/styles/vancouver" rel="template"/>
-    <link href="http://radiology.rsna.org/site/pia/manprep12.xhtml" rel="documentation"/>
+    <link href="https://pubs.rsna.org/page/radiology/author-instructions#references" rel="documentation"/>
     <author>
       <name>Adam Tunis</name>
       <email>atunis@gmail.com</email>
@@ -60,12 +60,15 @@
   </macro>
   <macro name="access">
     <choose>
-      <if variable="URL">
+      <if variable="DOI">
+        <text variable="DOI" prefix="doi: "/>
+      </if>
+      <else-if variable="URL">
         <group delimiter=". ">
           <text variable="URL"/>
           <text macro="accessed-date"/>
         </group>
-      </if>
+      </else-if>
     </choose>
   </macro>
   <macro name="accessed-date">
@@ -205,7 +208,7 @@
         <text macro="author"/>
         <text macro="title"/>
       </group>
-      <group delimiter=". " suffix=". ">
+      <group delimiter=". ">
         <text macro="editor"/>
         <text macro="container-title"/>
         <text macro="publisher"/>
@@ -215,8 +218,10 @@
         <text macro="journal-location"/>
         <text macro="pages"/>
       </group>
-      <text macro="report-details" suffix=". "/>
-      <text macro="access"/>
+      <group prefix=". " delimiter=". ">
+        <text macro="report-details"/>
+        <text macro="access"/>
+      </group>
     </layout>
   </bibliography>
 </style>

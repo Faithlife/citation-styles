@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="fr-CA">
   <info>
-    <title>ÉTS - École de technologie supérieure (French - Canada)</title>
+    <title>ÉTS - École de technologie supérieure (Français - Canada)</title>
     <title-short>ÉTS</title-short>
     <id>http://www.zotero.org/styles/ets-ecole-de-technologie-superieure</id>
     <link href="http://www.zotero.org/styles/ets-ecole-de-technologie-superieure" rel="self"/>
@@ -34,7 +34,7 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" and="text" delimiter-precedes-last="never" et-al-min="4" et-al-use-first="1" et-al-subsequent-min="4" et-al-subsequent-use-first="1" initialize-with=". "/>
+      <name form="short" and="text" delimiter-precedes-last="never" initialize-with=". "/>
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -122,23 +122,30 @@
     <text variable="issue" prefix=" "/>
   </macro>
   <macro name="access">
-    <group delimiter=". ">
-      <text variable="URL" prefix="&lt;" suffix="&gt;"/>
-      <choose>
-        <if variable="URL" match="any">
-          <group delimiter=" ">
-            <text value="Consulté le"/>
-            <date variable="accessed">
-              <date-part name="day" suffix=" "/>
-              <date-part name="month" suffix=" "/>
-              <date-part name="year"/>
-            </date>
-          </group>
-        </if>
-      </choose>
-    </group>
+    <choose>
+      <if variable="DOI" match="any">
+        <group delimiter=". ">
+          <text variable="DOI" prefix="&lt;https://doi.org/" suffix="&gt;"/>
+          <date variable="accessed" delimiter=" " prefix="Consulté le ">
+            <date-part name="day"/>
+            <date-part name="month"/>
+            <date-part name="year"/>
+          </date>
+        </group>
+      </if>
+      <else-if variable="URL" match="any">
+        <group delimiter=". ">
+          <text variable="URL" prefix="&lt;" suffix="&gt;"/>
+          <date variable="accessed" delimiter=" " prefix="Consulté le ">
+            <date-part name="day"/>
+            <date-part name="month"/>
+            <date-part name="year"/>
+          </date>
+        </group>
+      </else-if>
+    </choose>
   </macro>
-  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true">
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" et-al-subsequent-min="4" et-al-subsequent-use-first="1">
     <layout prefix="(" suffix=")" delimiter="&#160;; ">
       <group delimiter=", ">
         <text macro="author-short"/>
@@ -162,7 +169,14 @@
             <text variable="genre"/>
             <text variable="publisher-place"/>
             <text variable="publisher"/>
-            <text variable="page" form="short" suffix=" p"/>
+            <choose>
+              <if match="any" variable="number-of-pages">
+                <text variable="number-of-pages" suffix=" p"/>
+              </if>
+              <else-if match="any" variable="page">
+                <text variable="page" suffix=" p"/>
+              </else-if>
+            </choose>
           </group>
         </if>
         <else-if type="book" match="any">
@@ -258,10 +272,10 @@
         <else-if type="article-newspaper">
           <group delimiter=", " prefix=". ">
             <text macro="journal-title"/>
-            <date variable="issued">
-              <date-part name="day" suffix=" "/>
-              <date-part name="month" suffix=" "/>
-              <date-part name="year" suffix="."/>
+            <date variable="issued" delimiter=" " prefix="(" suffix=")">
+              <date-part name="day"/>
+              <date-part name="month"/>
+              <date-part name="year"/>
             </date>
             <text variable="page" prefix="p. "/>
           </group>
