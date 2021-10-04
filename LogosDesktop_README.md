@@ -1,6 +1,11 @@
 Logos Desktop Citation Styles Readme
 ==============================
 
+Updating this repo
+------------------
+
+See the guidelines for updating third party repositories: https://wiki.lrscorp.net/Third_Party_Git_Repositories
+
 Embedding styles in Logos Desktop
 ---------------------------------
 
