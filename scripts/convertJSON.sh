@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 OUTPUT_DIR="$1"
 SCRIPT_DIR=`dirname $0`
@@ -10,6 +10,11 @@ then
 	exit 1
 fi
 
+if ! which python3 > /dev/null
+then
+	echo 'This script requires `python3` to be in your $PATH and executable.'
+	exit 1
+fi
 
 for style in american-anthropological-association american-political-science-association american-sociological-association apa apa-6th-edition bibtex chicago-fullnote-bibliography christian-writers-manual-of-style din-1505-2 harvard-cite-them-right modern-humanities-research-association modern-language-association modern-language-association-7th-edition pontifical-athenaeum-regina-apostolorum pontifical-biblical-institute refer-bibix ris society-of-biblical-literature-fullnote-bibliography society-of-biblical-literature-fullnote-bibliography-1st-ed turabian-author-date turabian-fullnote-bibliography unified-style-sheet-for-linguistics
 do
@@ -22,9 +27,9 @@ do
 		exit 1
 	fi
 
-	python "$SCRIPT_DIR/makejson.py" "$src_file" > "$OUTPUT_DIR/$style.json"
+	python3 "$SCRIPT_DIR/makejson.py" "$src_file" > "$OUTPUT_DIR/$style.json"
 done
 
-git_upstream_revision=`git rev-parse upstream/master`
-git_thirdparty_revisiON=`git rev-parse master`
-echo "CSL JSON files generated from upstream/master revision $git_upstream_revision, master revision $git_thirdparty_revision on `date`" | tee "$OUTPUT_DIR/csl_revision_info.txt"
+git_upstream_revision=`git rev-parse upstream`
+git_thirdparty_revision=`git rev-parse master`
+echo "CSL JSON files generated from upstream revision $git_upstream_revision, master revision $git_thirdparty_revision on `date`" | tee "$OUTPUT_DIR/csl_revision_info.txt"

@@ -41,4 +41,4 @@ if __name__ == "__main__":
     w = jsonwalker()
     doc = w.makedoc(open(sys.argv[1]).read())
     obj = w.walktojson(doc)
-    print json.dumps(obj)
+    print(json.dumps(obj))
