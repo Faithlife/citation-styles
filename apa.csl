@@ -1302,10 +1302,22 @@
         <label variable="issue" text-case="capitalize-first"/>
         <text variable="issue"/>
       </group>
-      <group delimiter=" ">
-        <label variable="page" form="short" suffix=" "/>
-        <text variable="page"/>
-      </group>
+      <!--
+        Prefer using `verse` when it's available instead of `page`.
+        This change is necessary because we sometimes supply verse numbers
+        in the `page` variable.
+      -->
+      <choose>
+        <if variable="verse">
+          <text variable="verse"/>
+        </if>
+        <else>
+          <group delimiter=" ">
+            <label variable="page" form="short" suffix=" "/>
+            <text variable="page"/>
+          </group>
+        </else>
+      </choose>
     </group>
   </macro>
   <macro name="reviewed-title">
