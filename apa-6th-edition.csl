@@ -1179,6 +1179,11 @@
           </group>
         </else>
       </choose>
+      <!--
+        Prefer using `verse` when it's available instead of `page`.
+        This change is necessary because we sometimes supply verse numbers
+        in the `page` variable.
+      -->
       <choose>
         <if variable="verse">
           <text variable="verse"/>
