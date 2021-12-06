@@ -23,3 +23,14 @@ sh convertJSON.sh "<path_to_Libronix.DigitalLibrary/CitationStyles>"
 ## Localization
 
 The locale files for the supported langaugages are obtained from [https://github.com/citation-style-language/locales](https://github.com/citation-style-language/locales). When they need to be updated, they should be copied into the `Libronix.DigitalLibrary/Citations/Locales` folder. New locale files should be added to the `Libronix.DigitalLibrary.csproj` file as EmbeddedResources.
+
+## CSL terminology, resources, and tips
+
+In a CSL file, the `<citation>` tag defines the footnote citation, and the `<bibliography>` defines the bibliographic citation.
+
+Some styles have two different ways footnotes can be used, "fullnote" and "shortnote"/"author-date". The fullnote version contains much of the same information a bibliographic citation would, whereas the shortnote version will generally contain very little information (often times just the author and date, hence why it is also called author-date).
+
+### Helpful resources
+
+- [CSL Spec](https://docs.citationstyles.org/en/stable/specification.html#appendix-iii-types)
+- [CslCitationFormatUtility](https://git.faithlife.dev/Logos/Utility/blob/master/src/Libronix.Utility/Citations/CslCitationFormatUtility.cs) - This is the utility that maps Logos resource fields to CSL fields
