@@ -988,8 +988,8 @@
             <text macro="title-note"/>
             <text macro="container-title-note"/>
           </group>
-          <text macro="point-locators"/>
           <text macro="issue-note"/>
+          <text macro="point-locators"/>
         </group>
       </else>
     </choose>
@@ -1001,8 +1001,8 @@
         <text macro="title-note"/>
         <text macro="container-title-note"/>
       </group>
-      <text macro="point-locators"/>
       <text macro="issue"/>
+      <text macro="point-locators"/>
     </group>
   </macro>
   <citation et-al-min="4" et-al-use-first="1" disambiguate-add-names="true">
