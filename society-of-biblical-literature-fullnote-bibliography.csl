@@ -988,6 +988,7 @@
             <text macro="title-note"/>
             <text macro="container-title-note"/>
           </group>
+          <text macro="issue-note"/>
           <text macro="point-locators"/>
         </group>
       </else>
@@ -1000,6 +1001,7 @@
         <text macro="title-note"/>
         <text macro="container-title-note"/>
       </group>
+      <text macro="issue"/>
       <text macro="point-locators"/>
     </group>
   </macro>
