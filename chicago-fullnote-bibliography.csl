@@ -386,7 +386,22 @@
     <group delimiter=" ">
       <choose>
         <if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
-          <text term="in"/>
+          <!--
+            The CSL spec doesn't define a type for generic dictionaries/encyclopedias without
+            a specific article being cited, so we need to handle that case here.
+          -->
+          <choose>
+            <if type="entry-dictionary entry-encyclopedia" match="any">
+              <choose>
+                <if variable="title">
+                  <text term="in"/>
+                </if>
+              </choose>
+            </if>
+            <else>
+              <text term="in"/>
+            </else>
+          </choose>
         </if>
       </choose>
       <choose>
@@ -406,7 +421,22 @@
     <group delimiter=" ">
       <choose>
         <if type="chapter entry-dictionary entry-encyclopedia paper-conference" match="any">
-          <text term="in" text-case="capitalize-first"/>
+          <!--
+            The CSL spec doesn't define a type for generic dictionaries/encyclopedias without
+            a specific article being cited, so we need to handle that case here.
+          -->
+          <choose>
+            <if type="entry-dictionary entry-encyclopedia" match="any">
+              <choose>
+                <if variable="title">
+                  <text term="in" text-case="capitalize-first"/>
+                </if>
+              </choose>
+            </if>
+            <else>
+              <text term="in" text-case="capitalize-first"/>
+            </else>
+          </choose>
         </if>
       </choose>
       <choose>
