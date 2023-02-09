@@ -17,11 +17,6 @@ class jsonwalker:
 
     def walktojson(self, elem):
         obj = {}
-        obj["name"] = elem.nodeName
-        obj["attrs"] = {}
-        if elem.attributes:
-            for key in elem.attributes.keys():
-                obj["attrs"][key] = elem.attributes[key].value
         obj["children"] = []
         if len(elem.childNodes) == 0 and elem.nodeName == "term":
             obj["children"] = [""]
@@ -33,6 +28,14 @@ class jsonwalker:
                     obj["children"].append(child.wholeText)
             else:
                 obj["children"].append(self.walktojson(child))
+
+        obj["name"] = elem.nodeName
+
+        obj["attrs"] = {}
+        if elem.attributes:
+            for key in elem.attributes.keys():
+                obj["attrs"][key] = elem.attributes[key].value
+
         return obj
 
 if __name__ == "__main__":

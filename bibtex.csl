@@ -13,6 +13,10 @@
       <email>karnesky+zotero@gmail.com</email>
       <uri>http://arc.nucapt.northwestern.edu/Richard_Karnesky</uri>
     </contributor>
+    <contributor>
+      <name>Brenton M. Wiernik</name>
+      <email>zotero@wiernik.org</email>
+    </contributor>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
     <updated>2012-09-14T21:22:32+00:00</updated>
@@ -143,7 +147,7 @@
       <text macro="zotero2bibtexType" prefix=" @"/>
       <group prefix="{" suffix=" }" delimiter=",&lt;br /&gt;">
         <text macro="citeKey"/>
-        <text variable="publisher-place" prefix=" place={" suffix="}"/>
+        <text variable="publisher-place" prefix=" address={" suffix="}"/>
         <!--Fix This-->
         <text variable="chapter-number" prefix=" chapter={" suffix="}"/>
         <!--Fix This-->
