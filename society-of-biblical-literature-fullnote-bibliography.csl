@@ -1028,7 +1028,7 @@
         <!-- Lexicon/Dictionary/Encyclopedia -->
         <else-if type="entry-dictionary entry-encyclopedia" match="any">
           <choose>
-            <if match="none" variable="author">
+            <if match="none" variable="author editor">
               <!-- Unsigned Lexicon/Dictionary/Encyclopedia -->
               <text macro="unsigned-dictionary-note"/>
             </if>
@@ -1093,7 +1093,7 @@
         <!-- Dictionary -->
         <if type="entry-dictionary entry-encyclopedia" match="any">
           <choose>
-            <if match="none" variable="author">
+            <if match="none" variable="author editor">
               <!-- Unsigned Not Listed -->
             </if>
             <else>
