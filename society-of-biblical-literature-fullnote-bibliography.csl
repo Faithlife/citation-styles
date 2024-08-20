@@ -1092,16 +1092,15 @@
       <choose>
         <!-- Dictionary -->
         <if type="entry-dictionary entry-encyclopedia" match="any">
-          <!--
-            The upstream code produces nothing here if the `author` variable is not set.
-
-            `author` will not be set when we are not creating an article citation. SBL 2nd edition
-            doesn't define what to do when citing a dictionary/encyclopedia without referencing a
-            specific article, so upstream considers this invalid.
-
-            Instead we ignore this check, which will mean the other contributors get used instead of the author.
-          -->
-          <text macro="signed-dictionary-bib"/>
+          <choose>
+            <if match="none" variable="author">
+              <!-- Unsigned Not Listed -->
+            </if>
+            <else>
+              <!-- Signed -->
+              <text macro="signed-dictionary-bib"/>
+            </else>
+          </choose>
         </if>
         <!-- Not Dictionary -->
         <else>
