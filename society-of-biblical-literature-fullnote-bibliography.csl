@@ -426,7 +426,7 @@
   </macro>
   <macro name="container-title-note">
     <choose>
-      <if type="chapter paper-conference" match="any">
+      <if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
         <text term="in" suffix=" "/>
         <text variable="container-title" font-style="italic" text-case="title"/>
       </if>
