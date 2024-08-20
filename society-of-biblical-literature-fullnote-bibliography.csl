@@ -987,6 +987,7 @@
             <text macro="contributors-note"/>
             <text macro="title-note"/>
             <text macro="container-title-note"/>
+            <text macro="secondary-contributors-note"/>
           </group>
           <text macro="issue-note"/>
           <text macro="point-locators"/>
@@ -1000,6 +1001,7 @@
         <text macro="contributors"/>
         <text macro="title-note"/>
         <text macro="container-title-note"/>
+        <text macro="secondary-contributors-note"/>
       </group>
       <text macro="issue"/>
       <text macro="point-locators"/>
@@ -1055,8 +1057,8 @@
             <text macro="contributors-note"/>
             <text macro="title-note"/>
             <text macro="description-note"/>
-            <text macro="secondary-contributors-note"/>
             <text macro="container-title-note"/>
+            <text macro="secondary-contributors-note"/>
             <text macro="container-contributors-note"/>
             <choose>
               <if variable="volume collection-title" match="all">
