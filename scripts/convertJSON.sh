@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OUTPUT_DIR="$1"
-SCRIPT_DIR=`dirname $0`
+SCRIPT_DIR=$(dirname "$0")
 
 if [[ -z "$OUTPUT_DIR" || ! -d "$OUTPUT_DIR" ]]
 then
@@ -30,6 +30,7 @@ do
 	python3 "$SCRIPT_DIR/makejson.py" "$src_file" > "$OUTPUT_DIR/$style.json"
 done
 
-git_upstream_revision=`git rev-parse upstream`
-git_thirdparty_revision=`git rev-parse master`
-echo "CSL JSON files generated from upstream revision $git_upstream_revision, master revision $git_thirdparty_revision on `date`" | tee "$OUTPUT_DIR/csl_revision_info.txt"
+git_upstream_revision=$(git rev-parse upstream)
+git_thirdparty_revision=$(git rev-parse master)
+echo "CSL JSON files generated from upstream revision $git_upstream_revision, master revision $git_thirdparty_revision \
+	on $(date)" | tee "$OUTPUT_DIR/csl_revision_info.txt"
