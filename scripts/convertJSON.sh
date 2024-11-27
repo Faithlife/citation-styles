@@ -16,8 +16,34 @@ then
 	exit 1
 fi
 
-for style in american-anthropological-association american-political-science-association american-sociological-association apa apa-6th-edition bibtex chicago-fullnote-bibliography christian-writers-manual-of-style din-1505-2 harvard-cite-them-right modern-humanities-research-association modern-language-association modern-language-association-7th-edition modern-language-association-8th-edition pontifical-athenaeum-regina-apostolorum pontifical-biblical-institute refer-bibix ris society-of-biblical-literature-fullnote-bibliography society-of-biblical-literature-fullnote-bibliography-1st-ed turabian-author-date turabian-fullnote-bibliography unified-style-sheet-for-linguistics
-do
+STYLES=(
+	american-anthropological-association
+	american-political-science-association
+	american-sociological-association
+	apa
+	apa-6th-edition
+	associacao-brasileira-de-normas-tecnicas
+	bibtex
+	chicago-fullnote-bibliography
+	christian-writers-manual-of-style
+	din-1505-2
+	harvard-cite-them-right
+	modern-humanities-research-association
+	modern-language-association
+	modern-language-association-7th-edition
+	modern-language-association-8th-edition
+	pontifical-athenaeum-regina-apostolorum
+	pontifical-biblical-institute
+	refer-bibix
+	ris
+	society-of-biblical-literature-fullnote-bibliography
+	society-of-biblical-literature-fullnote-bibliography-1st-ed
+	turabian-author-date
+	turabian-fullnote-bibliography
+	unified-style-sheet-for-linguistics
+)
+
+for style in "${STYLES[@]}"; do
 	echo "Converting $style from CSL to JSON"
 
 	src_file="$SCRIPT_DIR/../$style.csl"
