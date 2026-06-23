@@ -959,17 +959,20 @@
     </group>
   </macro>
   <macro name="unsigned-dictionary-note">
-    <group delimiter=", ">
-      <group>
-        <text variable="container-title" font-style="italic" text-case="uppercase"/>
-        <number variable="volume" prefix=" "/>
-        <text variable="collection-title" text-case="uppercase"/>
-        <text variable="collection-number" prefix=" "/>
+    <group>
+      <group delimiter=", ">
+        <group>
+          <text variable="container-title" font-style="italic" text-case="uppercase"/>
+          <number variable="volume" prefix=" "/>
+          <text variable="collection-title" text-case="uppercase"/>
+          <text variable="collection-number" prefix=" "/>
+        </group>
+        <group delimiter=" ">
+          <text term="sub verbo" form="short"/>
+          <text variable="title" text-case="title" quotes="true"/>
+        </group>
       </group>
-      <group delimiter=" ">
-        <text term="sub verbo" form="short"/>
-        <text variable="title" text-case="title" quotes="true"/>
-      </group>
+      <text macro="issue-note"/>
     </group>
   </macro>
   <macro name="signed-dictionary-note">
@@ -1096,7 +1099,22 @@
         <if type="entry-dictionary entry-encyclopedia" match="any">
           <choose>
             <if match="none" variable="author editor">
-              <!-- Unsigned Not Listed -->
+              <!-- Unsigned -->
+              <group>
+                <group delimiter=", ">
+                  <group>
+                    <text variable="container-title" font-style="italic" text-case="uppercase"/>
+                    <number variable="volume" prefix=" "/>
+                    <text variable="collection-title" text-case="uppercase"/>
+                    <text variable="collection-number" prefix=" "/>
+                  </group>
+                  <group delimiter=" ">
+                    <text term="sub verbo" form="short"/>
+                    <text variable="title" text-case="title" quotes="true"/>
+                  </group>
+                </group>
+                <text macro="issue"/>
+              </group>
             </if>
             <else>
               <!-- Signed -->
