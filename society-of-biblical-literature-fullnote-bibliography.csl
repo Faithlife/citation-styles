@@ -962,7 +962,7 @@
     <group>
       <group delimiter=", ">
         <group>
-          <text variable="container-title" font-style="italic" text-case="uppercase"/>
+          <text variable="container-title" font-style="italic"/>
           <number variable="volume" prefix=" "/>
           <text variable="collection-title" text-case="uppercase"/>
           <text variable="collection-number" prefix=" "/>
@@ -1103,7 +1103,7 @@
               <group>
                 <group delimiter=", ">
                   <group>
-                    <text variable="container-title" font-style="italic" text-case="uppercase"/>
+                    <text variable="container-title" font-style="italic"/>
                     <number variable="volume" prefix=" "/>
                     <text variable="collection-title" text-case="uppercase"/>
                     <text variable="collection-number" prefix=" "/>
